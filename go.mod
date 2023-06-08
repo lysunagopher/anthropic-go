@@ -1,3 +1,3 @@
-module github.com/madebywelch/anthropic-go
+module github.com/lysunagopher/anthropic-go
 
 go 1.20
