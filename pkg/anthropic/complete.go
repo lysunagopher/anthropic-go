@@ -52,8 +52,12 @@ func (c *Client) sendCompletionRequest(req *CompletionRequest) (*CompletionRespo
 	if err != nil {
 		return nil, fmt.Errorf("error marshalling completion request: %w", err)
 	}
-
-	request, err := http.NewRequest("POST", fmt.Sprintf("%s/v1/complete", c.baseURL), bytes.NewBuffer(data))
+	// todo
+	//request, err := http.NewRequest("POST", fmt.Sprintf("%s/v1/complete", c.baseURL), bytes.NewBuffer(data))
+	//if err != nil {
+	//	return nil, fmt.Errorf("error creating new request: %w", err)
+	//}
+	request, err := http.NewRequest("POST", fmt.Sprintf("%s/claude/chat", c.baseURL), bytes.NewBuffer(data))
 	if err != nil {
 		return nil, fmt.Errorf("error creating new request: %w", err)
 	}
@@ -82,8 +86,12 @@ func (c *Client) sendCompletionRequestStream(req *CompletionRequest, callback St
 	if err != nil {
 		return nil, fmt.Errorf("error marshalling completion request: %w", err)
 	}
-
-	request, err := http.NewRequest("POST", fmt.Sprintf("%s/v1/complete", c.baseURL), bytes.NewBuffer(data))
+	// todo
+	//request, err := http.NewRequest("POST", fmt.Sprintf("%s/v1/complete", c.baseURL), bytes.NewBuffer(data))
+	//if err != nil {
+	//	return nil, fmt.Errorf("error creating new request: %w", err)
+	//}
+	request, err := http.NewRequest("POST", fmt.Sprintf("%s/claude/chat", c.baseURL), bytes.NewBuffer(data))
 	if err != nil {
 		return nil, fmt.Errorf("error creating new request: %w", err)
 	}

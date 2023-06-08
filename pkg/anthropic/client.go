@@ -40,7 +40,9 @@ func NewClient(apiKey string, options ...ClientOptions) (*Client, error) {
 	client := &Client{
 		httpClient: &http.Client{},
 		apiKey:     apiKey,
-		baseURL:    "https://api.anthropic.com",
+		// todo
+		//baseURL:    "https://api.anthropic.com",
+		baseURL:    "http://127.0.0.1:8088",
 		maxRetries: 0,               // Default value for maxRetries
 		retryDelay: 0 * time.Second, // Default value for retryDelay
 	}
