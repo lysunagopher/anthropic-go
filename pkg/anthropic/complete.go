@@ -91,7 +91,7 @@ func (c *Client) sendCompletionRequestStream(req *CompletionRequest, callback St
 	//if err != nil {
 	//	return nil, fmt.Errorf("error creating new request: %w", err)
 	//}
-	request, err := http.NewRequest("POST", fmt.Sprintf("%s/claude/chat", c.baseURL), bytes.NewBuffer(data))
+	request, err := http.NewRequest("POST", fmt.Sprintf("%s/claude/stream_chat", c.baseURL), bytes.NewBuffer(data))
 	if err != nil {
 		return nil, fmt.Errorf("error creating new request: %w", err)
 	}
